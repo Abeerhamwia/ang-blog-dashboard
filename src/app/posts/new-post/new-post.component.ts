@@ -13,32 +13,29 @@ export class NewPostComponent implements OnInit {
   imgSrc: string = './assets/placeholder-image.png';
   selectedImg: any;
   categories: Array<object> | any;
-  postForm: FormGroup | any;
+  postForm: FormGroup;
 
-  constructor( private categoryService: CategoriesService, private fb: FormBuilder) {
-
+  constructor(private categoryService: CategoriesService, private fb: FormBuilder) {
     this.postForm = this.fb.group({
       title: [''],
-      permalink: [''],
+      permalink: [{value: '', disabled: true}],
       excerpt: [''],
       category: [''],
       postImg: [''],
       content: ['']
-    })
-   }
+    });
+  }
 
   ngOnInit(): void {
-      this.categoryService.loadData().subscribe(val => {
-        this.categories = val;
-      })
+    this.categoryService.loadData().subscribe(val => {
+      this.categories = val;
+    });
   }
 
   onTitleChanged($event: any) {
-    
     const title = $event.target.value;
-    this.permalink = title.replace(/\s/g,'-');
-
-    
+    this.permalink = title.replace(/\s/g, '-');
+    this.postForm.patchValue({ permalink: this.permalink });
   }
 
   showPreview($event: any) {
@@ -47,16 +44,13 @@ export class NewPostComponent implements OnInit {
       const result = e.target?.result;
       this.imgSrc = typeof result === 'string' ? result : './assets/placeholder-image.png';
     };
-  
-    // Ensure a file is selected before attempting to read it
+
     if ($event.target.files.length > 0) {
       reader.readAsDataURL($event.target.files[0]);
       this.selectedImg = $event.target.files[0];
+      this.postForm.patchValue({ postImg: this.selectedImg });
     } else {
-      // Set placeholder image if no file is selected
       this.imgSrc = './assets/placeholder-image.png';
     }
   }
-  
-
 }

@@ -1,6 +1,11 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import "~ngx-toastr/toastr";
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+
+
+
 
 :root{
     --primary-color: #026467;
