@@ -7,6 +7,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AngularFireModule } from '@angular/fire/compat';
@@ -42,5 +43,6 @@ import { NewPostComponent } from './posts/new-post/new-post.component';
         ToastrModule.forRoot(),
         BrowserAnimationsModule,
         AngularEditorModule,
+        HttpClientModule ,
         ReactiveFormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
