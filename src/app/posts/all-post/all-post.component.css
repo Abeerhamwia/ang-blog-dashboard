@@ -1,0 +1,24 @@
+.table {
+    width: 100%;
+    table-layout: fixed; /* Ensure table doesn't expand beyond its container */
+}
+
+.table img {
+    max-width: 100%; /* Prevent images from expanding beyond table cell */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.card-body {
+    overflow-x: auto; /* Allow horizontal scrolling if content overflows */
+}
+
+.custom-margin {
+    margin-left: 15px; /* Adjust this value as needed */
+}
+.btn-group-horizontal {
+    display: flex;
+    gap: 10px; /* Adjust the space between buttons as needed */
+}
+
+
+

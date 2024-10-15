@@ -1,3 +1,13 @@
 .form-control {
     width: 100% !important; /* Ensures the input takes up full width */
 }
+
+.btn-group-horizontal {
+    display: flex;
+    gap: 10px; /* Adjust the space between buttons as needed */
+}
+.btn-theme {
+    height: 60px !important;
+    border: none !important;
+    background-color: var(--primary-color) !important;
+}

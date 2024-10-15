@@ -7,14 +7,17 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import { HttpClientModule } from '@angular/common/http';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
 
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
-import { environment } from 'src/environments/environment.prod';
+
+import { environment } from '../environments/environment.prod';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,7 +38,9 @@ import { NewPostComponent } from './posts/new-post/new-post.component';
         AllPostComponent,
         NewPostComponent
     ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
+    bootstrap: [AppComponent], 
+    imports: [
+        BrowserModule,
         AppRoutingModule,
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFirestoreModule,
@@ -43,6 +48,9 @@ import { NewPostComponent } from './posts/new-post/new-post.component';
         ToastrModule.forRoot(),
         BrowserAnimationsModule,
         AngularEditorModule,
-        HttpClientModule ,
-        ReactiveFormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        ReactiveFormsModule,
+        AngularFireStorageModule,
+        AngularFireAuthModule
+    ], 
+        providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

@@ -1,0 +1,17 @@
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-theme {
+    height: 60px !important; /* Match height of inputs */
+    padding: 0 20px !important; /* Match padding of inputs */
+    border: none !important;
+    font-size: 13px !important;
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    width: 100% !important; /* Ensure button spans the full width */
+    display: flex;
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+}

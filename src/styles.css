@@ -13,9 +13,9 @@
 }
 
 body{
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    color: var(--body-text-color);
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px !important;
+    color: var(--body-text-color) !important;
 }
 
 .site-logo {
@@ -30,33 +30,32 @@ body{
 }
 
 .shadow-effect{
-    border: none;
-    box-shadow: 0px 0px 33px -10px rgb(71, 114, 254, 0.3);
+    border: none !important;
+    box-shadow: 0px 0px 33px -10px rgb(71, 114, 254, 0.3) !important;
 }
 
 .bg-theme{
-    background-color: var(--primary-color);
+    background-color: var(--primary-color) !important;
 }
 
 .bg-secondary-theme {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color) !important;
 }
 
 .text-theme-primary {
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
 }
 
-input[type = text], input[type = email] {
-    height: 60px;
-    padding-left: 20px;
-    width: 100%;
+input[type = text], input[type = email], input[type = password] {
+    height: 60px !important;
+    padding-left: 20px !important;
+    width: 100% !important;
 }
 
 .btn-theme {
-    height: 58px;
-    border: none;
-    font-size: 13px;
-    background-color: var(--primary-color);
-    color: white;
+    height: 60px !important;
+    border: none !important;
+    background-color: var(--primary-color) !important;
 }
+
 
